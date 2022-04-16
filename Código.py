@@ -34,7 +34,12 @@ AD3 = AD3.reset_index(drop=True)
 #Segunda parte; gráficos
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.cm as cm
+import matplotlib.colors as colors
 
+desfase = (0.1, 0.1, 0.1, 0.1)
+plt.pie(AD3['NPLACES ESTACIÓ'], labels=AD3['PROVINCIA'])
+plt.show()
 
 
 ################################################################################
