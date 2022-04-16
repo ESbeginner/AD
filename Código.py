@@ -13,5 +13,5 @@ if __name__ == "__main__": # esta sección se encarga de que si somos nosotros l
 # IDENTIFICADOR, ADREÇA, PROVINCIA, CODIPROV, MUNICIPI, NPLACES ESTACIÓ, TIPUS VEHICLE, Columna amb georeferència POINT.
 
 '''
-ACCES, PROVINCIA, MUNICIPI, NPLACES ESTACIÓ
+ACCES, PROVINCIA, MUNICIPI, NPLACES ESTACIÓ hola
 '''
