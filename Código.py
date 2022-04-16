@@ -21,5 +21,5 @@ if __name__ == "__main__": # esta sección se encarga de que si somos nosotros l
 ACCES(público, privado), PROVINCIA, MUNICIPI, NPLACES ESTACIÓ
 Todas las combinaciones de NPLACES son
 https://aprendeconalf.es/docencia/python/manual/pandas/
-
+Prueba renatto
 '''
