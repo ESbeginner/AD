@@ -57,19 +57,96 @@ AD3 = AD3.reset_index(drop=True) #Se hace de nuevo el índice
 
 ################################################################################
 
+#Preparamos todos los datos para representar
+accesos = AD3["ACCES"]
+provincia = AD3["PROVINCIA"]
+municipi = AD3["MUNICIPI"]
+nplazas = AD3["NPLACES ESTACIÓ"]
+
+#Primer quesito grande de provincias
+Nbarcelona = []
+Ntarragona = []
+Nlleida = []
+Ngirona = []
+
+for i in range(len(provincia)):
+    if provincia[i] == "Barcelona":
+        Nbarcelona.append(nplazas[i])
+
+    elif provincia[i] == "Tarragona":
+        Ntarragona.append(nplazas[i])
+
+    elif provincia[i] == "Lleida":
+        Nlleida.append(nplazas[i])
+
+    elif provincia[i] == "Girona":
+        Ngirona.append(nplazas[i])
+
+
+Nbarcelona = sum(Nbarcelona)
+Ntarragona = sum(Ntarragona)
+Nlleida = sum(Nlleida)
+Ngirona = sum(Ngirona)
+
+#Primer quesito grande de accesos
+NCC = []
+NHOTEL = []
+NPUBLIC = []
+NVIA_PUBLICA = []
+NSERVEI = []
+NPRIVAT = []
+NALTRES = []
+
+for i in range(len(accesos)):
+    if accesos[i] == "APARCAMENT CC":
+        NCC.append(nplazas[i])
+
+    elif accesos[i] == "HOTEL" or accesos[i] == "APARCAMENT HOTEL" :
+        NHOTEL.append(nplazas[i])
+
+    elif accesos[i] == "APARCAMENT PUBLIC" or accesos[i] == "APARCAMENT PÚBLIC":
+        NPUBLIC.append(nplazas[i])
+
+    elif accesos[i] == "VIA PUBLICA" or accesos[i] == "VIA PÚBLICA":
+        NVIA_PUBLICA.append(nplazas[i])
+
+    elif accesos[i] == "ESTACIÓ SERVEI" or accesos[i] == "ESTACIÓ DE SERVEI":
+        NSERVEI.append(nplazas[i])
+
+    else:
+        NALTRES.append(nplazas[i])
+
+NCC = sum(NCC)
+NHOTEL = sum(NHOTEL)
+NPUBLIC = sum(NPUBLIC)
+NVIA_PUBLICA = sum(NVIA_PUBLICA)
+NSERVEI = sum(NSERVEI)
+NALTRES = sum(NALTRES)
+################################################################################
+
 #Segunda parte; gráficos
-'''
 import matplotlib.cm as cm
 import matplotlib.colors as colors
 
+PROVINCIAS = [Nbarcelona, Ntarragona, Nlleida, Ngirona]
+Nombres = ["Barcelona", "Tarragona", "Lleida", "Girona"]
+Colores = ["#EE6055","#60D394","#AAF683","#FFD97D","#FF9B85"]
 desfase = (0.1, 0.1, 0.1, 0.1)
-plt.pie(AD3['NPLACES ESTACIÓ'], labels=AD3['PROVINCIA'])
+plt.pie(PROVINCIAS, labels = Nombres, autopct = "%0.1f %%", colors = Colores, explode = desfase, shadow = True)
 plt.show()
-'''
+
+APARCAMENTS = [NCC, NHOTEL, NPUBLIC, NVIA_PUBLICA, NSERVEI, NALTRES]
+Nombres_APARCAMIENTOS = ["Aparcament CC", "Aparcament hotel", "Aparcament públic", "Aparcament via pública", "Estació de servei", "Altres aparcaments"]
+desfase = (0.1, 0.1, 0.1, 0.1, 0.1, 0.1)
+plt.pie(APARCAMENTS, labels = Nombres_APARCAMIENTOS, autopct = "%0.1f %%", explode = desfase, shadow = True)
+plt.show()
+
+
 ################################################################################
 #Testeo
 if __name__ == "__main__": # esta sección se encarga de que si somos nosotros lo que ejecutamos el código, se active el condicionante if==True
   print(AD3)
+  print(NCC)
    # Con esto podremos ver los datos. Para ver solo los 5 primeros es recomendable usar la función Head()
 # PROMOTOR-GESTOR, ACCES, TIPUS VELOCITAT, TIPUS CONNEXIÓ, LATITUD, LONGITUD, DESIGNACIÓ-DESCRIPTIVA, POTENCIA, TIPUS DE CORRENT
 # IDENTIFICADOR, ADREÇA, PROVINCIA, CODIPROV, MUNICIPI, NPLACES ESTACIÓ, TIPUS VEHICLE, Columna amb georeferència POINT.
