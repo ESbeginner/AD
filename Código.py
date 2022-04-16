@@ -15,8 +15,10 @@ AD2 = AD1.dropna()
 AD3 = AD2.reset_index(drop=True)
 temp = [] # lo que vamos a hacer ahora es buscar los valores de nplaces que
           # no seran trabajables posteriormente, como las sumas
-for i in AD3["NPLACES ESTACIÓ"]: # entonces, ahora vamos a buscar los índices
-    temp.append(i) # de estos valores
+for i in AD3["NPLACES ESTACIÓ"]:
+    try:
+        AD3.
+    except ValueError:
 
 
 
