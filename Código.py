@@ -9,7 +9,7 @@ accesos = df["ACCES"]
 provincia = df["PROVINCIA"]
 municipi = df["MUNICIPI"]
 nplazas = df["NPLACES ESTACIÓ"]
-AD = pd.DataFrame(["accesos","provincia"])
+AD = pd.DataFrame([accesos,provincia,municipi,nplazas])
 
 if __name__ == "__main__": # esta sección se encarga de que si somos nosotros lo que ejecutamos el código, se active el condicionante if==True
   print(AD) # Con esto podremos ver los datos. Para ver solo los 5 primeros es recomendable usar la función Head()
