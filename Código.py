@@ -1,6 +1,5 @@
+#Primera parte; filtrado de datos
 import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
 data = pd.read_csv("Estacions_de_rec_rrega_per_a_vehicle_el_ctric_a_Catalunya.csv")
 df=pd.DataFrame(data)
 accesos = df["ACCES"]
@@ -31,14 +30,15 @@ for i in range(len(temp)):
 AD3 = AD3.drop(AD3.index[nindex])
 
 AD3 = AD3.reset_index(drop=True)
-
+################################################################################
+#Segunda parte; gráficos
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 
 if __name__ == "__main__": # esta sección se encarga de que si somos nosotros lo que ejecutamos el código, se active el condicionante if==True
   print(AD3) # Con esto podremos ver los datos. Para ver solo los 5 primeros es recomendable usar la función Head()
-  print(temp)
-  print(nindex)
 # PROMOTOR-GESTOR, ACCES, TIPUS VELOCITAT, TIPUS CONNEXIÓ, LATITUD, LONGITUD, DESIGNACIÓ-DESCRIPTIVA, POTENCIA, TIPUS DE CORRENT
 # IDENTIFICADOR, ADREÇA, PROVINCIA, CODIPROV, MUNICIPI, NPLACES ESTACIÓ, TIPUS VEHICLE, Columna amb georeferència POINT.
 
