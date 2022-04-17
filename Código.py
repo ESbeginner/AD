@@ -12,7 +12,7 @@ import numpy as np
 data = pd.read_csv("Estacions_de_rec_rrega_per_a_vehicle_el_ctric_a_Catalunya.csv")
 df=pd.DataFrame(data) #Definimos toda la base de datos con el nombre df
 
-#Seleccionamos las columnas que nos interasan y les damos un nombre
+#Seleccionamos las columnas que nos interesan y les damos un nombre
 accesos = df["ACCES"]
 provincia = df["PROVINCIA"]
 municipi = df["MUNICIPI"]
@@ -37,7 +37,7 @@ for i in AD3["NPLACES ESTACIÓ"]:
         #str
         pass
 
-#Añadimos de vulta los valores con su nueva clase
+#Añadimos de vuelta los valores con su nueva clase
 for i in AD3["NPLACES ESTACIÓ"]:
     try:
         #Los valores con su clase cambiada y sin cambiar son agregados a la
@@ -128,17 +128,21 @@ NALTRES = sum(NALTRES)
 import matplotlib.cm as cm
 import matplotlib.colors as colors
 
+plt.subplot(2, 1, 1)
 PROVINCIAS = [Nbarcelona, Ntarragona, Nlleida, Ngirona]
 Nombres = ["Barcelona", "Tarragona", "Lleida", "Girona"]
 Colores = ["#EE6055","#60D394","#AAF683","#FFD97D","#FF9B85"]
 desfase = (0.1, 0.1, 0.1, 0.1)
 plt.pie(PROVINCIAS, labels = Nombres, autopct = "%0.1f %%", colors = Colores, explode = desfase, shadow = True)
-plt.show()
+plt.grid(True)
 
+plt.subplot(2, 1, 2)
 APARCAMENTS = [NCC, NHOTEL, NPUBLIC, NVIA_PUBLICA, NSERVEI, NALTRES]
 Nombres_APARCAMIENTOS = ["Aparcament CC", "Aparcament hotel", "Aparcament públic", "Aparcament via pública", "Estació de servei", "Altres aparcaments"]
 desfase = (0.1, 0.1, 0.1, 0.1, 0.1, 0.1)
 plt.pie(APARCAMENTS, labels = Nombres_APARCAMIENTOS, autopct = "%0.1f %%", explode = desfase, shadow = True)
+plt.grid(True)
+
 plt.show()
 
 
