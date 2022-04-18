@@ -377,7 +377,7 @@ B:SM Serveis Municipals,APARCAMENT PUBLIC,NORMAL,MENNEKES.F+Schuko,41.386972,2.1
 ,VIA PUBLICA,semiRAPID,2xMENNEKES.F,42.10443,1.85188,EdRsR Berga (AC11kW),11,AC,,"Passeig de la Indústria, 13",Barcelona,08,Berga,2,,POINT (1.85188 42.10443)
 BIMSA,VIA PUBLICA,NORMAL,Schuko,41.395305,2.153849,Lateral-Muntanya Diagonal (Balmes-Tusset) 2,,,LC050,"Avinguda Diagonal, 508-510",Barcelona,08,Barcelona,2,moto,POINT (2.153849 41.395305)
 ,VIA PUBLICA,semiRAPID i NORMAL,MENNEKES.F+Schuko,41.23829,1.75831,EdRsR Sant Pere de Ribes 3 (AC6kW),6,AC,,"Carrer les Modistes, 8",Barcelona,08,Sant Pere de Ribes,2,cotxe i moto,POINT (1.75831 41.23829)
-Ajuntament de la Seu d'Urgell,VIA PUBLICA,semiRAPID i NORMAL,MENNEKES.F+Schuko,42.3556,1.46035,EdRsR La Seu d'Urgell (AC22kW),22,AC,,Passeig Joan Brudieu,LLeida,25,La Seu d'Urgell,2,cotxe,POINT (1.46035 42.3556)
+Ajuntament de la Seu d'Urgell,VIA PUBLICA,semiRAPID i NORMAL,MENNEKES.F+Schuko,42.3556,1.46035,EdRsR La Seu d'Urgell (AC22kW),22,AC,,Passeig Joan Brudieu,Lleida,25,La Seu d'Urgell,2,cotxe,POINT (1.46035 42.3556)
 MERCABARNA,VIA PUBLICA,RAPID,CCS Combo2+ChadeMO+MENNEKES.M,41.33003,2.11496,EdRR- Mercabarna (DC50kW AC43kW),50,AC-DC,FC013,Aparcament Mercabarna,Barcelona,08,Barcelona,1,cotxe,POINT (2.11496 41.33003)
 ,,semiRAPID,2xMENNEKES.F,41.54412,1.89232,EdRsR Olesa 2 (AC22kW),22,AC,,"Carrer de Mallorca, 2",Barcelona,08,Olesa de Montserrat,,,POINT (1.89232 41.54412)
 TESLA,APARCAMENT HOTEL,semiRAPID,TESLA,41.95399,3.12487,TESLA Destianció - Mas de Torrent Hotel & Spa (11kW),11,AC,,Afores de Torrent,Girona,17,Torrent,1,cotxe,POINT (3.12487 41.95399)

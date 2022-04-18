@@ -151,7 +151,7 @@ plt.grid(True)
 import plotly.express as px
 fig1 = px.sunburst(
     data_frame=AD3,
-    path = ["ACCES","NPLACES ESTACIÓ", "PROVINCIA", "MUNICIPI"],
+    path = ["ACCES", "PROVINCIA", "MUNICIPI"],
 
 )
 fig1.update_traces(textinfo="label+percent parent",level=5, selector=dict(type="sunburst"))
@@ -159,13 +159,13 @@ fig1.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
 fig2 = px.sunburst(
     data_frame=AD3,
-    path = ["NPLACES ESTACIÓ", "ACCES", "PROVINCIA", "MUNICIPI"],
+    path = ["PROVINCIA", "MUNICIPI"],
 
 )
 fig2.update_traces(textinfo="label+percent parent")
 fig2.update_layout(margin=dict(t=0, l=0, r=0, b=0))
 
-fig1.show()#, fig2.show()
+fig1.show(), fig2.show()
 ################################################################################
 #Testeo
 if __name__ == "__main__": # esta sección se encarga de que si somos nosotros lo que ejecutamos el código, se active el condicionante if==True
