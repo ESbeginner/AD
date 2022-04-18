@@ -7,7 +7,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 #Empezamos leyendo la base de datos con la que trabajaremos
 data = pd.read_csv("Estacions_de_rec_rrega_per_a_vehicle_el_ctric_a_Catalunya.csv")
 df=pd.DataFrame(data) #Definimos toda la base de datos con el nombre df
@@ -122,12 +122,14 @@ NPUBLIC = sum(NPUBLIC)
 NVIA_PUBLICA = sum(NVIA_PUBLICA)
 NSERVEI = sum(NSERVEI)
 NALTRES = sum(NALTRES)
+
+#Primer quesito grande de municipios
+
 ################################################################################
 
 #Segunda parte; gráficos
 import matplotlib.cm as cm
 import matplotlib.colors as colors
-
 plt.subplot(2, 1, 1)
 PROVINCIAS = [Nbarcelona, Ntarragona, Nlleida, Ngirona]
 Nombres = ["Barcelona", "Tarragona", "Lleida", "Girona"]
@@ -144,7 +146,6 @@ plt.pie(APARCAMENTS, labels = Nombres_APARCAMIENTOS, autopct = "%0.1f %%", explo
 plt.grid(True)
 
 plt.show()
-
 
 ################################################################################
 #Testeo
