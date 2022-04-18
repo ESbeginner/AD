@@ -59,25 +59,40 @@ AD3 = AD3.reset_index(drop=True) #Se hace de nuevo el índice
 #Segunda parte; gráficos
 
 import plotly.express as px
-fig = px.sunburst(AD3,
-                  path = ["PROVINCIA","MUNICIPI"],
-                  values = "NPLACES ESTACIÓ",
-                  width = 1000, height = 1000,
-                  title = "Funciona por favor")
+from plotly.subplots import make_subplots
+fig1 = px.sunburst(AD3,
+                  path = ["PROVINCIA","MUNICIPI","ACCES"],
+                  values = "NPLACES ESTACIÓ"
+                  hovertemplate = 'Percent: %{value:.2f}')
+
+fig2 = px.sunburst(AD3,
+                    path = ["PROVINCIA","ACCES","MUNICIPI"],
+                    values = "NPLACES ESTACIÓ")
+
+fig = make_subplots(rows=1, cols=2, specs=[[{"type": "sunburst"}, {"type": "sunburst"}]])
+
+fig.add_trace(fig1.data[0], row=1, col=1)
+fig.add_trace(fig2.data[0], row=1, col=2)
 
 fig.show()
+
+
 ################################################################################
 #Testeo
-if __name__ == "__main__": # esta sección se encarga de que si somos nosotros lo que ejecutamos el código, se active el condicionante if==True
-  print(NPMMataro)
-  print(NPMMontmelo)
+ # esta sección se encarga de que si somos nosotros lo que ejecutamos el código, se active el condicionante if==True
+
    # Con esto podremos ver los datos. Para ver solo los 5 primeros es recomendable usar la función Head()
 # PROMOTOR-GESTOR, ACCES, TIPUS VELOCITAT, TIPUS CONNEXIÓ, LATITUD, LONGITUD, DESIGNACIÓ-DESCRIPTIVA, POTENCIA, TIPUS DE CORRENT
 # IDENTIFICADOR, ADREÇA, PROVINCIA, CODIPROV, MUNICIPI, NPLACES ESTACIÓ, TIPUS VEHICLE, Columna amb georeferència POINT.
 
 '''
-ACCES(público, privado), PROVINCIA, MUNICIPI, NPLACES ESTACIÓ
-Todas las combinaciones de NPLACES son
-https://aprendeconalf.es/docencia/python/manual/pandas/
-
+#ACCES(público, privado), PROVINCIA, MUNICIPI, NPLACES ESTACIÓ
+#Todas las combinaciones de NPLACES son
+#https://www.delftstack.com/es/howto/python/sum-of-list-of-numbers-in-python/
+#https://es.stackoverflow.com/questions/142506/regenerar-indices-en-un-pandas-dataframe-tras-eliminar-filas
+#https://www.delftstack.com/es/howto/python-pandas/how-to-get-a-value-from-a-cell-of-a-dataframe/
+#https://www.delftstack.com/es/howto/python-pandas/drop-row-pandas/
+#https://aprendeconalf.es/docencia/python/manual/pandas/
+#https://stackoverflow.com/questions/64377918/plotly-how-to-generate-side-by-side-px-sunburst-plots
+#https://coderzcolumn.com/tutorials/data-science/how-to-create-sunburst-chart-in-python-plotly
 '''
