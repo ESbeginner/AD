@@ -66,6 +66,7 @@ fig1 = px.sunburst(AD3,
 
 fig1.update_traces(textinfo="label+percent parent+value")
 
+
 fig2 = px.sunburst(AD3,
                     path = ["PROVINCIA","ACCES","MUNICIPI"],
                     values = "NPLACES ESTACIÓ")
@@ -79,17 +80,19 @@ fig3 = px.sunburst(AD3,
 fig3.update_traces(textinfo="label+percent parent+value")
 
 fig = make_subplots(
+horizontal_spacing=0,
+vertical_spacing=0,
 subplot_titles=["","PROVINCIA -> ACCES -> MUNICIPI(ACCES)","","PROVINCIA -> MUNICIPI -> ACCES","","ACCES -> PROVINCIA -> MUNICIPI(ACCES)"],
 rows=2,
 cols=3,
-specs=[[{"type": "sunburst"}, {"type": "sunburst"}, {"type": "sunburst"}],[{"type": "sunburst"}, {"type": "sunburst"}, {"type": "sunburst"}]])
+specs=[[{}, {"type": "sunburst"}, {}],[{"type": "sunburst"}, {}, {"type": "sunburst"}]])
 
 
 fig.add_trace(fig1.data[0], row=1, col=2)
 fig.add_trace(fig2.data[0], row=2, col=1)
 fig.add_trace(fig3.data[0], row=2, col=3)
 
-fig.update_layout()
+fig.update_layout(margin=dict(t=30, b=10, r=10, l=10))
 fig.show()
 
 
