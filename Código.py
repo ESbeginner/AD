@@ -78,14 +78,18 @@ fig3 = px.sunburst(AD3,
 
 fig3.update_traces(textinfo="label+percent parent+value")
 
-fig = make_subplots(rows=1, cols=3, specs=[[{"type": "sunburst"}, {"type": "sunburst"}, {"type": "sunburst"}]])
+fig = make_subplots(
+subplot_titles=["","PROVINCIA -> ACCES -> MUNICIPI(ACCES)","","PROVINCIA -> MUNICIPI -> ACCES","","ACCES -> PROVINCIA -> MUNICIPI(ACCES)"],
+rows=2,
+cols=3,
+specs=[[{"type": "sunburst"}, {"type": "sunburst"}, {"type": "sunburst"}],[{"type": "sunburst"}, {"type": "sunburst"}, {"type": "sunburst"}]])
 
 
-fig.add_trace(fig1.data[0], row=1, col=1)
-fig.add_trace(fig2.data[0], row=1, col=2)
-fig.add_trace(fig3.data[0], row=1, col=3)
+fig.add_trace(fig1.data[0], row=1, col=2)
+fig.add_trace(fig2.data[0], row=2, col=1)
+fig.add_trace(fig3.data[0], row=2, col=3)
 
-fig.update_layout(title='    PROVINCIA -> MUNICIPI -> ACCES                   PROVINCIA -> ACCES -> MUNICIPI(ACCES)           ACCES -> PROVINCIA -> MUNICIPI(ACCES) ')
+fig.update_layout()
 fig.show()
 
 
