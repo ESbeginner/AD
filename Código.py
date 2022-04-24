@@ -5,9 +5,7 @@
 #Para instalar una libreria en el dispositivo utilitzar en la consola el comando
 #pip install "nombre_de_la_libreria"
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 #Empezamos leyendo la base de datos con la que trabajaremos
 data = pd.read_csv("Estacions_de_rec_rrega_per_a_vehicle_el_ctric_a_Catalunya.csv")
 df=pd.DataFrame(data) #Definimos toda la base de datos con el nombre df
