@@ -36,12 +36,10 @@ for i in AD3["NPLACES ESTACIÓ"]:
 
 #Añadimos de vuelta los valores con su nueva clase
 for i in AD3["NPLACES ESTACIÓ"]:
-    try:
         #Los valores con su clase cambiada y sin cambiar son agregados a la
         #lista temp
         temp.append(i)
-    except ValueError:
-        pass
+
 
 nindex = []
 for i in range(len(temp)):
