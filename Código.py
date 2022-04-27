@@ -5,6 +5,7 @@
 #Para instalar una libreria en el dispositivo utilitzar en la consola el comando
 #pip install "nombre_de_la_libreria"
 import pandas as pd
+
 #Empezamos leyendo la base de datos con la que trabajaremos
 data = pd.read_csv("Estacions_de_rec_rrega_per_a_vehicle_el_ctric_a_Catalunya.csv")
 df=pd.DataFrame(data) #Definimos toda la base de datos con el nombre df
@@ -36,10 +37,12 @@ for i in AD3["NPLACES ESTACIÓ"]:
 
 #Añadimos de vuelta los valores con su nueva clase
 for i in AD3["NPLACES ESTACIÓ"]:
+    try:
         #Los valores con su clase cambiada y sin cambiar son agregados a la
         #lista temp
         temp.append(i)
-
+    except ValueError:
+        pass
 
 nindex = []
 for i in range(len(temp)):
