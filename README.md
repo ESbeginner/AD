@@ -10,5 +10,8 @@ Bien, lo siguiente es aprenderse, no de memoria porque sería un esfuerzo inúti
 Las columnas que vamos autilizar tienen como valor llave: "ACCES","PROVINCIA","MUNICIPI","NPLACES ESTACIÓ".
 
 Seguiremos el ejemplo mostrado en la documentación
-![image](https://user-images.githubusercontent.com/103512348/165547327-74f2906b-1c41-4e96-8b56-07015d3f149f.png)
+![image](https://user-images.githubusercontent.com/103512348/165547812-e24d5bb3-ccfe-49ad-91a1-a5d932d9819d.png)
+Con este método extraeremos los datos del documentos CSV
+
+
 
